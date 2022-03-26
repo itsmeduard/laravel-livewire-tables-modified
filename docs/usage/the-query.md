@@ -7,6 +7,8 @@ By default, the package will join any relationship tables it can, it will also e
 
 This package only currently supports Eloquent models. You have two ways of hooking up your model.
 
+**Note:** You can try [calebporzio/sushi](https://github.com/calebporzio/sushi) for arrays.
+
 ## Using the model property
 
 If you have a simple table and you know you won't to join any extra tables or make any aliases, you can just use the model property:

@@ -10,7 +10,16 @@ You render components the same way you [render](https://laravel-livewire.com/doc
 Your component at `App\Http\Livewire\UsersTable.php`
 
 ```html
-<x-livewire:users-table />
+<livewire:users-table />
+```
+
+## Theme
+
+By default, all components will use the theme in the config file. But if for some reason you have different parts of your application using different frameworks, you can set the theme on a per-table basis:
+
+
+```html
+<livewire:users-table theme="bootstrap-4" />
 ```
 
 ## Using sub-folders
@@ -18,7 +27,7 @@ Your component at `App\Http\Livewire\UsersTable.php`
 If your component does not live in `App\Http\Livewire`, you can specify a different sub-folder. For example if your component lives in `App\Http\Livewire\Backend\Users` you would use the following:
 
 ```html
-<x-livewire:backend.users.users-table />
+<livewire:backend.users.users-table />
 ```
 
 ### Using non-standard locations
@@ -38,7 +47,7 @@ public function boot(): void
 ```
 
 ```html
-<x-livewire:backend.users.users-table />
+<livewire:backend.users.users-table />
 ```
 
 ## Passing Properties
@@ -46,7 +55,7 @@ public function boot(): void
 Just like in standard Livewire components, you may pass properties and accept them in your mount method:
 
 ```html
-<x-livewire:invoices-table status="open" />
+<livewire:invoices-table status="open" />
 ```
 
 ```php

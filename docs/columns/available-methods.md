@@ -206,3 +206,24 @@ If you need the access the relationships on the model from a format call or some
 Column::make('Address', 'address.address')
     ->eagerLoadRelations() // Adds with('address') to the query
 ```
+
+### Conditionally Hiding Columns
+
+Sometimes you may want to hide columns based on certain conditions. You can use the `hideIf` method to conditionally hide columns:
+
+```php
+Column::make('Type', 'user.type')
+    ->hideIf(request()->routeIs('this.other.route'))
+
+Column::make('Last 4', 'card_last_four')
+    ->hideIf(! auth()->user()->isAdmin())
+```
+
+### Excluding from Column Select
+
+If you don't want a column to be able to be turned off from the column select box, you may exclude it:
+
+```php
+Column::make('Address', 'address.address')
+    ->excludeFromColumnSelect()
+```

@@ -12,25 +12,25 @@ This feature **does not work** for multiple tables on the same page that are the
 For example, this works:
 
 ```html
-<x-livewire:users-table />
+<livewire:users-table />
 
-<x-livewire:roles-table />
+<livewire:roles-table />
 ```
 
 But this does not work:
 
 ```html
-<x-livewire:users-table status="active" />
+<livewire:users-table status="active" />
 
-<x-livewire:users-table status="pending" />
+<livewire:users-table status="pending" />
 ```
 
 If you need the above, you should make them different components like so:
 
 ```html
-<x-livewire:active-users-table />
+<livewire:active-users-table />
 
-<x-livewire:pending-users-table />
+<livewire:pending-users-table />
 ```
 
 ## Introduction

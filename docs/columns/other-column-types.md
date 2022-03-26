@@ -1,6 +1,6 @@
 ---
 title: Other Column Types
-weight: 3
+weight: 4
 ---
 
 ## Boolean Columns
@@ -67,5 +67,55 @@ You can override this functionality:
 BooleanColumn::make('Active')
     ->setCallback(function(string $value) {
         // Figure out what makes $value true
+    })
+```
+
+## Image Columns
+
+Image columns provide a way to display images in your table without having to use `format()` or partial views:
+
+```php
+ImageColumn::make('Avatar')
+    ->location(function($row) {
+        return storage_path('app/public/avatars/' . $row->id . '.jpg');
+    })
+```
+
+You may also pass an array of attributes to apply to the image tag:
+
+```php
+ImageColumn::make('Avatar')
+    ->location(function($row) {
+        return storage_path('app/public/avatars/' . $row->id . '.jpg');
+    })
+    ->attributes(function($row) {
+        return [
+            'class' => 'rounded-full',
+            'alt' => $row->name . ' Avatar',
+        ];
+    })
+```
+
+## Link Columns
+
+Link columns provide a way to display HTML links in your table without having to use `format()` or partial views:
+
+```php
+LinkColumn::make('Action')
+    ->title(fn($row) => 'Edit')
+    ->location(fn($row) => route('admin.users.edit', $row))
+```
+
+You may also pass an array of attributes to apply to the `a` tag:
+
+```php
+LinkColumn::make('Action')
+    ->title(fn($row) => 'Edit')
+    ->location(fn($row) => route('admin.users.edit', $row))
+    ->attributes(function($row) {
+        return [
+            'class' => 'rounded-full',
+            'alt' => $row->name . ' Avatar',
+        ];
     })
 ```
