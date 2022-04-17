@@ -14,6 +14,7 @@ class LinkColumn extends Column
         LinkColumnConfiguration;
 
     protected string $view = 'livewire-tables::includes.columns.link';
+    protected $idCallback;
     protected $titleCallback;
     protected $locationCallback;
     protected $attributesCallback;
@@ -27,6 +28,10 @@ class LinkColumn extends Column
 
     public function getContents(Model $row)
     {
+        if (! $this->hasIdCallback()) {
+            throw new DataTableConfigurationException('You must specify a id callback for an link column.');
+        }
+        
         if (! $this->hasTitleCallback()) {
             throw new DataTableConfigurationException('You must specify a title callback for an link column.');
         }
@@ -37,6 +42,7 @@ class LinkColumn extends Column
 
         return view($this->getView())
             ->withColumn($this)
+            ->withId(app()->call($this->getIdCallback(), ['row' => $row]))
             ->withTitle(app()->call($this->getTitleCallback(), ['row' => $row]))
             ->withPath(app()->call($this->getLocationCallback(), ['row' => $row]))
             ->withAttributes($this->hasAttributesCallback() ? app()->call($this->getAttributesCallback(), ['row' => $row]) : []);
