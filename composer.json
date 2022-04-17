@@ -1,19 +1,20 @@
 {
-    "name": "rappasoft/laravel-livewire-tables",
+    "name": "itsmeduard/laravel-livewire-tables-modified",
     "description": "A dynamic table component for Laravel Livewire",
     "keywords": [
         "rappasoft",
         "livewire",
         "datatables",
         "tables",
-        "laravel"
+        "laravel",
+        "itsmeduard"
     ],
-    "homepage": "https://github.com/rappasoft/laravel-livewire-tables",
+    "homepage": "https://github.com/itsmeduard/laravel-livewire-tables-modified",
     "license": "MIT",
     "authors": [
         {
-            "name": "Anthony Rappa",
-            "email": "rappa819@gmail.com",
+            "name": "Filsen Eduard Valdez",
+            "email": "valdezfilsen@gmail.com",
             "role": "Developer"
         }
     ],
