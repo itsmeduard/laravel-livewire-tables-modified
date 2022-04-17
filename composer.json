@@ -32,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Rappasoft\\LaravelLivewireTables\\": "src"
+            "Itsmeduard\\LaravelLivewireTables\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rappasoft\\LaravelLivewireTables\\Tests\\": "tests"
+            "Itsmeduard\\LaravelLivewireTables\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,7 +51,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Rappasoft\\LaravelLivewireTables\\LaravelLivewireTablesServiceProvider"
+                "Itsmeduard\\LaravelLivewireTables\\LaravelLivewireTablesServiceProvider"
             ]
         }
     },
