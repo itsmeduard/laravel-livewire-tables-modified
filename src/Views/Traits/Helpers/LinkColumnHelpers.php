@@ -5,6 +5,16 @@ namespace Rappasoft\LaravelLivewireTables\Views\Traits\Helpers;
 trait LinkColumnHelpers
 {
     // TODO: Test
+    public function getidCallback()
+    {
+        return $this->idCallback;
+    }
+
+    public function hasidCallback()
+    {
+        return $this->idCallback !== null;
+    }
+
     public function getTitleCallback()
     {
         return $this->titleCallback;
