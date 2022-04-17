@@ -28,7 +28,7 @@ class LinkColumn extends Column
 
     public function getContents(Model $row)
     {
-        if (! $this->hasIdCallback()) {
+        if (! $this->hasidCallback()) {
             throw new DataTableConfigurationException('You must specify a id callback for an link column.');
         }
         
@@ -42,7 +42,7 @@ class LinkColumn extends Column
 
         return view($this->getView())
             ->withColumn($this)
-            ->withId(app()->call($this->getIdCallback(), ['row' => $row]))
+            ->withid(app()->call($this->getIdCallback(), ['row' => $row]))
             ->withTitle(app()->call($this->getTitleCallback(), ['row' => $row]))
             ->withPath(app()->call($this->getLocationCallback(), ['row' => $row]))
             ->withAttributes($this->hasAttributesCallback() ? app()->call($this->getAttributesCallback(), ['row' => $row]) : []);
